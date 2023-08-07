@@ -1,0 +1,91 @@
+body {
+    background-color: rgb(180, 180, 180);
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 75%;
+}
+
+.curved {
+    margin: 1%;
+    border-radius: 25px;
+    padding: 20px;
+    border: 2px;
+}
+
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(255, 57, 156);
+    text-align: center;
+}
+
+h2  {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    text-align: left;
+}
+
+p,
+li {
+    font-family: sans-serif;
+    color: white;
+    font-size: 20px;
+}
+
+.title {
+    background-color: rgb(92, 0, 46);
+    color: rgb(175, 0, 0);
+    font-family: verdana;
+    font-size: 30px;
+}
+
+.hyperlinks {
+    background-color: rgb(250, 210, 212);
+}
+
+.sections h2 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sections img {
+    width: 100%;
+    height: auto;
+}
+
+.headers {
+    background-color: lightcoral;
+}
+
+.tooltip {
+    background-color: lightcyan;
+}
+
+.audio {
+    background-color: aquamarine;
+}
+
+.breaks {
+    background-color: pink;
+}
+
+.pre {
+    background-color: lightsalmon;
+}
+
+.forms {
+    background-color: goldenrod;
+}
+
+.black {
+    background-color: rgb(0, 0, 0);
+}
+
+.intro {
+    background-color: lightblue;
+}
+
+.github {
+    background-color: lightslategrey;
+}
