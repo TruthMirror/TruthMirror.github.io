@@ -34,20 +34,32 @@ body {
 
 /* title */
 h1 {
+  color: white;
   margin: auto;
   width: 50%;
   text-align: center;
-  padding: 10px;
+  padding: 3.1rem;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 5rem;
+}
+h2 {
+  color: white;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  padding: 0px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 2rem;
 }
 
 footer {
   position: 0 0 0;
   background-color: #f0f6f0;
-  opacity: 50%;
+  opacity: 20%;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-align: center;
+  margin: 3.1rem;
+  border-radius: 1rem;
 }
 
 /* background animation */
@@ -190,7 +202,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-
   /* added spacing to seperate the art, button and progress bar */
 }
 
@@ -244,6 +255,7 @@ footer {
   box-shadow: 0 1px 2px var(--col-02) inset;
   margin: 1rem;
   border-radius: 10%;
+  border-radius: 1rem;
 }
 
 .progressContainer {
@@ -251,27 +263,32 @@ footer {
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+  border-radius: 1rem;
 }
 
 
 
 ::-moz-progress-bar {
   background-color: var(--col-02);
+  border-radius: 1rem;
 }
 
 ::-webkit-progress-bar {
   background-color: var(--col-01);
   box-shadow: 0 1px 2px var(--col-02) inset;
+  border-radius: 1rem;
 }
 
 ::-webkit-progress-value {
   background-color: var(--col-02);
+  border-radius: 1rem;
 }
 
 .timeline-loading {
   background-image: -moz-repeating-linear-gradient(45deg, var(--col-03) 0% 2%, transparent 2% 4%, red 4%);
   background-size: 200% 100%;
   animation: loadingAnimation 4s linear infinite;
+  border-radius: 1rem;
 }
 
 @keyframes loadingAnimation {
