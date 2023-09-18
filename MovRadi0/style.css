@@ -1,0 +1,298 @@
+* {
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+/* Basis for colour palette comes from 1bit Monitor Glow Palette by Polyducks */
+/* https://lospec.com/palette-list/1bit-monitor-glow */
+/* you're welcome to change the colours if you want or any of the other general page style */
+:root {
+  --col-01: #222323;
+  --col-02: #f0f6f0;
+  --col-03: #5252ff;
+  --col-04: #b6e878;
+  --col-05: rgba:100, 100, 100, .9;
+  --col-06: #6f6f6f;
+  --border: 1px solid var(--col-02);
+}
+
+/* make body span whole page */
+
+html,
+body {
+
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  animation: Gradient 10s linear infinite;
+  /* background: radial-gradient( #5252ff, #6565fa,#1818a3,#575775,#a7a7d4); */
+
+}
+
+/* title */
+h1 {
+  color: white;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  padding: 3.1rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 5rem;
+}
+h2 {
+  color: white;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  padding: 0px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 2rem;
+}
+
+footer {
+  position: 0 0 0;
+  background-color: #f0f6f0;
+  opacity: 20%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  margin: 3.1rem;
+  border-radius: 1rem;
+}
+
+/* background animation */
+.animationGradient {
+  z-index: -1;
+  /* putting the background behind the player */
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-image: url(img/BackgroundLong.png);
+  background-repeat: repeat-x;
+  animation: back1 10s linear infinite;
+  scale: 300%;
+  background: conic-gradient(at top, rgb(31, 0, 51), rgb(99, 0, 165), rgb(41, 31, 48), rgb(99, 0, 165), rgb(31, 0, 51));
+}
+
+
+
+/* @keyframes Gradient {
+  0% {
+  transform: translateX(-25%);
+  }
+  100% {
+    background-position: translateX(25%);
+  }
+} */
+
+@keyframes back1 {
+  0% {
+
+    opacity: 70%;
+    rotate: 90deg;
+  }
+
+  50% {
+    opacity: 100%;
+  }
+
+  100% {
+
+    opacity: 70%;
+    rotate: -90deg;
+  }
+
+}
+
+/* This was added to make sure i could position the player without messing with the body*/
+.player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #b6e878; */
+  margin: 0;
+  height: 75vh;
+  /* positioned the player away from the top */
+}
+
+.audio-player-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+
+}
+
+/* becuase I want to overlay the play icon on the audio they need to be in their own wrapper */
+.audio-element-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+#audioElement {
+  width: 100%;
+  grid-column: 1/2;
+  grid-row: 1/2;
+
+}
+
+#heroImage {
+  width: 100%;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  /* seperate the player from the album */
+  /* animation: Fade 1s; */
+  transition: opacity .5s, scale 0.5s;
+  /* adding smooth opacity and scale transition to help show when audio is playing */
+}
+
+
+/* make when hovering over album, for it to be a pointer, as you can pause/play by clicking there */
+#heroImage:hover {
+  cursor: pointer
+}
+
+
+/* experement hiding elements */
+/* .Hidden {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+} */
+
+/* experementing with fade animations */
+/* @keyframes Fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+  
+} */
+
+#audioPlayOverlay {
+  width: 8rem;
+  height: 8rem;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-self: center;
+  align-self: center;
+  opacity: 0.6;
+  pointer-events: none;
+  display: none;
+}
+
+.audio-controls-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* this overwrites the above display:flex - something which is then undone when the JS loads */
+#controlsWrapper {
+  display: none;
+}
+
+/* created to center the button, and incase i want to add extra buttons */
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* added spacing to seperate the art, button and progress bar */
+}
+
+.audio-control-button {
+  scale: 200%;
+  width: 2rem;
+  height: 2rem;
+  padding: .1rem;
+  border: none;
+  cursor: pointer;
+  margin: 2rem;
+  transition: all 0.2s;
+  /* added a transision for hover, and clicking to make it smoother */
+}
+
+.audio-control-button:hover {
+  background-color: var(--col-05);
+}
+
+.audio-control-button:active {
+  background-color: var(--col-06);
+}
+
+.button-icon {
+  pointer-events: none;
+}
+
+#playButton {
+  background-image: url('./icons/play.svg');
+  border-radius: 0.5rem;
+  /* experementing with curved corners */
+}
+
+#loopButton {
+  background-image: url('./icons/loop.svg');
+  border-radius: 0.5rem;
+  /* experementing with curved corners */
+}
+
+
+.audio-progress-bar {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  height: 2rem;
+  flex-grow: 1;
+  cursor: pointer;
+  background-color: var(--col-01);
+  box-shadow: 0 1px 2px var(--col-02) inset;
+  margin: 1rem;
+  border-radius: 10%;
+  border-radius: 1rem;
+}
+
+.progressContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  border-radius: 1rem;
+}
+
+
+
+::-moz-progress-bar {
+  background-color: var(--col-02);
+  border-radius: 1rem;
+}
+
+::-webkit-progress-bar {
+  background-color: var(--col-01);
+  box-shadow: 0 1px 2px var(--col-02) inset;
+  border-radius: 1rem;
+}
+
+::-webkit-progress-value {
+  background-color: var(--col-02);
+  border-radius: 1rem;
+}
+
+.timeline-loading {
+  background-image: -moz-repeating-linear-gradient(45deg, var(--col-03) 0% 2%, transparent 2% 4%, red 4%);
+  background-size: 200% 100%;
+  animation: loadingAnimation 4s linear infinite;
+  border-radius: 1rem;
+}
+
+@keyframes loadingAnimation {
+  100% {
+    background-position: 50% 0%;
+  }
+}

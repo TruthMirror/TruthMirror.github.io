@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOV Radio</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <script src="playerControls.js" defer></script>
+
+</head>
+
+<body>
+  <div class="background">
+    <div class="animationGradient" id="gradient"></div>
+  </div>
+  <h1>MOV Radio</h1>
+  <div class="player">
+    <!-- this element holds all of the media player -->
+    <div class="audio-player-wrapper">
+      <!-- this element holds the audio element and the overlay -->
+      <div class="audio-element-wrapper">
+
+        <!-- This is just an image placeholder, feel free to replace or not -->
+        <img id="heroImage" src="./bg-band.png" alt="">
+
+
+        <audio id="audioElement" controls>
+          <source
+            src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/erokia_ambient-wave-56-msfxp7-78.mp3"
+            type="audio/mp3">
+        </audio>
+
+        <img id="audioPlayOverlay" src="./icons/play.svg">
+        <h2>Ambient Wave 56 - Erokia</h2>
+      </div>
+      <!-- this element holds all of the custom controls -->
+      <div class="buttonContainer">
+        <button class="audio-control-button" id="playButton"></button>
+        <button class="audio-control-button" id="loopButton"></button>
+      </div>
+      <div class="audio-controls-wrapper" id="controlsWrapper">
+
+
+        <div class="progressContainer">
+          <progress class="audio-progress-bar" id="progressBar" value="0"></progress>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <footer>
+    <p class="attribution">
+      "<a target="_blank" rel="noopener noreferrer" href="https://freesound.org/people/Erokia/sounds/516902">Ambient
+        Wave 56 - (MSfxP7 - 78)</a>" by
+      <a target="_blank" rel="noopener noreferrer" href="https://freesound.org/people/Erokia">Erokia</a> is licensed
+      under
+      <a target="_blank" rel="noopener noreferrer"
+        href="https://creativecommons.org/licenses/by-nc/4.0/?ref=openverse">CC BY-NC 4.0
+        <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
+          style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+        <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
+          style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+        <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg"
+          style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+      </a>.
+    </p>
+    <p>Website by Lucas Douralis</p>
+  </footer>
+</body>
+
+</html>
